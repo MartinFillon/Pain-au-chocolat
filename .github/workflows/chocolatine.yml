@@ -16,4 +16,4 @@ jobs:
         with:
           target_repo_url: ${{ env.MIRROR_URL }}
           ssh_private_key:
-            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDDNWYgDmayJW2Une1njERW7dGRr0h4S3fnxFXt365bAyjJTzyccbehECJsyMpmsT37XuE9AeMv1hqvqzkv75aRgoAIRRp2peeUQVH2cgy+0mRS9OPnBUdAA+ATmPBNxYxN+vHMppOC4nN5dT2F3NujJ16zq/rmevrTQm63YbNIFAy4GGq91ujRiOQLJfiOTSXyleoK1TOi1IsIXQ5Jp6bAZvCZ4sAiPZSDur3BCQR4Twz7H+8v7zvXr9QKuwTKgoMjKTjn6OWWWm2Z2wBjkqkgV6WyNM/V0coz+lJToKChAYOLOYV22x/DjZjhhNWckmoyw548ts7GNam1C4T7/m0keqivFe+oNS9GAf54wJgJQZd0MFzZ2MntokXp3eo5hYOiDkFbfG4pdC1dzLJeEHbTF94bFZx+NAUSy4Mh7rJI6Sg6965LmOig7uDoTeTWCPPTk100AeUyx1Wdb3JrldWOX6GtCfV1Svtc9WLY+/Vv/AnXGwXFZ0hw0Vt/O9AM3IsB20zqlpIsKaXaNCGubzSH0FRvvrpjCa7m21yhda5SDdXNjmyKTnl32/K9Vsxi2H3wr2FNOj/Ud2CY4tmYk0W0gPiuDbPwf88XquiOM+lckTfs/WqWyg+8iNSPPScRSfwKwqYL/n82QNd1aQVVICXlcd8Wq0SJ8QTx92JhnxMrUQ== martin@fedora"
+            ${{ secrets.KEY }}
