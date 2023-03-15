@@ -9,7 +9,7 @@ jobs:
   check_coding_style:
     runs-on: ubuntu-latest
     container: style
-    image: ghcr.io/epitech/coding-style-checker:latest
+      image: ghcr.io/epitech/coding-style-checker:latest
     steps:
       - name: run coding-style
         run: echo "::set-output name=version::$(check.sh . .)"
