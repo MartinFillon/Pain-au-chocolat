@@ -8,7 +8,8 @@ env:
 jobs:
   check_coding_style:
     runs-on: ubuntu-latest
-    container: ghcr.io/epitech/coding-style-checker:latest
+    container: style
+    image: ghcr.io/epitech/coding-style-checker:latest
     steps:
       - name: run coding-style
         run: echo "::set-output name=version::$(check.sh . .)"
