@@ -43,7 +43,7 @@ jobs:
         with:
           fetch-depth: 0
       - run: |
-          make && make clean
+          timeout 120 make && make clean
       - run: |
           for EXECUTABLE in $(echo $EXECUTABLES | tr "," "\n"); do
             if [[ ! -f $EXECUTABLE ]]; then
