@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0
       - run: |
-        /usr/local/bin/check.sh $(pwd) $(pwd)
+          /usr/local/bin/check.sh $(pwd) $(pwd)
       - run: |
           cat $REPORT_FILE | while read LINE; do
             TYPE=$(echo $LINE | cut -d ':' -f 3 | tr -d ' ')
