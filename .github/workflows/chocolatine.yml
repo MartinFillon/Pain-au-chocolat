@@ -5,6 +5,10 @@ on:
     branches:
       - '**'
       - 'ga-ignore-*'
+  pull_request:
+    branches:
+      - '**'
+      - 'ga-ignore-*'
 env:
   MIRROR_URL: "git@github.com:EpitechPromo2027/B-DOP-200-PAR-2-1-chocolatine-martin.fillon.git"
   EXECUTABLES: "tester"
@@ -33,7 +37,7 @@ jobs:
             exit 1
           fi
 
-  make_project:
+  check_program_compilation:
     runs-on: ubuntu-latest
     needs: [check_coding_style]
     container:
@@ -52,9 +56,21 @@ jobs:
             fi
           done
 
-  push:
+  run_tests:
     runs-on: ubuntu-latest
     needs: [check_coding_style, make_project]
+    container:
+      image: epitechcontent/epitest-docker
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - run: |
+          timeout 120 make tests_run
+
+  push_to_mirror:
+    runs-on: ubuntu-latest
+    needs: [check_coding_style, check_program_compilation, run_tests]
     steps:
       - uses: actions/checkout@v2
         with:
