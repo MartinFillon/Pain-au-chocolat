@@ -58,7 +58,7 @@ jobs:
 
   run_tests:
     runs-on: ubuntu-latest
-    needs: [check_coding_style, make_project]
+    needs: [check_coding_style, check_program_compilation]
     container:
       image: epitechcontent/epitest-docker
     steps:
@@ -66,7 +66,7 @@ jobs:
         with:
           fetch-depth: 0
       - run: |
-          timeout 120 make tests_run
+          exit timeout 120 make tests_run
 
   push_to_mirror:
     runs-on: ubuntu-latest
