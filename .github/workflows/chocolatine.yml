@@ -51,7 +51,7 @@ jobs:
           timeout 120 make && make clean
       - run: |
           for EXECUTABLE in $(echo $EXECUTABLES | tr "," "\n"); do
-            if [[ ! -f $EXECUTABLE && ! -x $EXECUTABLE]]; then
+            if [[ ! -f $EXECUTABLE ]]; then
               echo "::error file=Makefile,title=Makefile error::Missing executable $EXECUTABLE"
               exit 1
             fi
